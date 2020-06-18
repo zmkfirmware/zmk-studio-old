@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import { Layout, Typography, Row } from 'antd';
+
+const { Header, Content, Footer, Sider } = Layout;
+const { Title } = Typography;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Layout className="App">
+			<Header className="AppHeader">
+				<img src="/zmk_logo.svg" alt="ZMK Logo"/>
+				<Title level={3}>Studio</Title>
+			</Header>
+			<Layout className="AppContent"></Layout>
+			<Footer>Copyright © {new Date().getFullYear()} ZMK Project Contributors</Footer>
+		</Layout>
+	);
 }
 
 export default App;

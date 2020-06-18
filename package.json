@@ -1,15 +1,16 @@
 {
   "name": "zmk-studio",
+  "productName": "ZMK Studio",
   "version": "0.1.0",
+  "main": "public/electron.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
     "@types/node": "^12.12.47",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
+    "antd": "^4.3.4",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -18,8 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "electron": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
+    "package": "npm run build && electron-builder build -c.extraMetadata.main=build/electron.js --publish never"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +36,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^9.0.4",
+    "electron-builder": "^22.7.0"
+  },
+  "build": {
+    "appId": "dev.zmkfirmware.zmk-studio",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
