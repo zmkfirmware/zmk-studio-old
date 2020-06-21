@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-import { Layout, Typography, Row } from 'antd';
+import { Layout, Typography } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Footer } = Layout;
 const { Title } = Typography;
 
 function App() {
